@@ -7,6 +7,7 @@ package lab2_danielalvarado;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -21,7 +22,8 @@ public class Lab2_DanielAlvarado {
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Empleado> lista = new ArrayList();
-
+        Random ale = new Random();
+        
         int opcion = 0;
         boolean logIn = false;
 
@@ -439,6 +441,33 @@ public class Lab2_DanielAlvarado {
 
                 case 7:
                     if (logIn) {
+                        System.out.println("Random cambia cargos: ");
+                        
+                        if(lista.isEmpty()){
+                            System.out.println("La lista esta vacia");
+                        }else{
+                            int numero = 1+ale.nextInt(lista.size());
+                        
+                            int random = 0+ale.nextInt(lista.size()-1);
+                            int gerentes = 0;
+                        
+                            for (Empleado e : lista) {
+                                int posicion = lista.indexOf(e);
+                                String cargo = lista.get(posicion).getCargo();
+                            
+                                if(cargo.equals("gerente")){
+                                    gerentes++;
+                                }
+                            }
+                            
+                            for (int i = 0; i < numero; i++) {
+                                int aleatorio = 1+ale.nextInt();
+                                
+                                
+                            }
+                        }
+                                                                  
+                        
                         
                     } else {
                         System.out.println("No ha iniciado sesion");
