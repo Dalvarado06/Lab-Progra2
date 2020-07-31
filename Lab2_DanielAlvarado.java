@@ -7,7 +7,9 @@ package lab2_danielalvarado;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 /**
  *
@@ -176,9 +178,11 @@ public class Lab2_DanielAlvarado {
                                 
                                 System.out.println("Se ha despedido"
                                         + " el empleado");
+                                System.out.println();
                             }
                             if(eleccion ==  2){
                                 System.out.println("No se elimino el empleado");
+                                System.out.println();
                             }
                         }
 
@@ -190,11 +194,13 @@ public class Lab2_DanielAlvarado {
 
                 case 3:
                     System.out.println("Inicio de sesion: ");
-                    System.out.println("Ingrese su usuario: ");
+                    System.out.println("-> Ingrese su usuario: ");
                     String usuario = sc.next();
+                    System.out.println();
 
-                    System.out.println("Ingrese su password");
+                    System.out.println("-> Ingrese su password");
                     String password = sc.next();
+                    System.out.println();
 
                     if (password.equals("99") && usuario.equals("leobanegas")) {
                         logIn = true;
@@ -221,13 +227,25 @@ public class Lab2_DanielAlvarado {
                                 }
                             }
                             
+                            int contador2 = 0;
+                            for (Empleado e : lista) {
+                                String cargo = e.getCargo();
+                                if(cargo.equals("cajero")){
+                                    contador2++;
+                                }
+                            }
+                            
                             if(contador >= 3){
                                 System.out.println("Las posiciones de gerente"
                                         + " estan ocupadas");
                                 System.out.println();
                             }
+                            else if(contador2 == 0){
+                                System.out.println("No hay empleados con mas "
+                                        + "cargo de cajero");
+                            }
                             else{
-                                System.out.println("Lista de cajeros");
+                                System.out.println("Lista de empleados");
                                 for (Empleado e : lista) {
                                     System.out.println(lista.indexOf(e) + "  " + e);
                                 }
@@ -251,13 +269,13 @@ public class Lab2_DanielAlvarado {
                                     }
                                     else{
                                         System.out.println("El empleado no "
-                                                + "tiene posicion de empleado:");
+                                                + "tiene posicion de cajero");
                                         System.out.println("Ingrese otra posicion: ");
                                         number = sc.nextInt();
                                     }
                                 }
                                 
-                                System.out.println("Desea ascender a gerente a "
+                                System.out.println("Desea ascender a gerente a \n"
                                         +lista.get(number)+" ? \n 1 = si 2 = no");
                                 int confirmacion = sc.nextInt();
                                 
@@ -447,8 +465,7 @@ public class Lab2_DanielAlvarado {
                             System.out.println("La lista esta vacia");
                         }else{
                             int numero = 1+ale.nextInt(lista.size());
-                        
-                            int random = 0+ale.nextInt(lista.size()-1);
+                                                    
                             int gerentes = 0;
                         
                             for (Empleado e : lista) {
@@ -461,13 +478,56 @@ public class Lab2_DanielAlvarado {
                             }
                             
                             for (int i = 0; i < numero; i++) {
-                                int aleatorio = 1+ale.nextInt();
+                                int aleatorio = 1+ale.nextInt(4);
+                                while(opcion == 1 && gerentes == 3){
+                                    aleatorio = 1+ale.nextInt(4);
+                                }
+                                int random = 1+ale.nextInt(lista.size());
                                 
-                                
+                                random--;
+                                switch(aleatorio){
+                                    case 1:
+                                        lista.get(random).setCargo("gerente");
+                                        lista.get(random).setSalario(50000);
+                                        gerentes++;
+                                        break;
+                                        
+                                    case 2:
+                                        String cargo = lista.get(random).getCargo();
+                                        if(cargo.equals("gerente")){
+                                            if(gerentes > 0)
+                                            gerentes--;
+                                            }
+                                        lista.get(random).setCargo("aseador");
+                                        lista.get(random).setSalario(30000);
+                                        break;
+                                        
+                                    case 3:
+                                        String c = lista.get(random).getCargo();
+                                        if(c.equals("gerente")){
+                                            if(gerentes > 0)
+                                            gerentes--;
+                                        }
+                                        
+                                        lista.get(random).setCargo("cajero");
+                                        lista.get(random).setSalario(40000);
+                                        break;
+                                        
+                                    case 4:
+                                        String carg = lista.get(random).getCargo();
+                                        if(carg.equals("gerente")){
+                                            if(gerentes > 0)
+                                            gerentes--;
+                                        }
+                                        lista.get(random).setCargo("seguridad");
+                                        lista.get(random).setSalario(38000);
+                                        break;
+                                }
                             }
                         }
                                                                   
-                        
+                        System.out.println("Se realizo con exito el random");  
+                        System.out.println();
                         
                     } else {
                         System.out.println("No ha iniciado sesion");

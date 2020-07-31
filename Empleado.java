@@ -117,7 +117,8 @@ public class Empleado {
     
     @Override
     public String toString(){
-        return "->Nombre: "+nombre+" -> Cargo: "+cargo;
+        return "-> Nombre: "+nombre+" -> Apellido: "+apellido+" -> Cargo: "+cargo
+                +" -> Salario: "+salario;
     }
     
     
