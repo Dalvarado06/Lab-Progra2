@@ -10,7 +10,7 @@ package lab2_danielalvarado;
  * @author dalva
  */
 public class Empleado { 
-    
+     
     private String nombre;
     private String apellido;
     private String cFavorito;

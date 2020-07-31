@@ -47,29 +47,29 @@ public class Lab2_DanielAlvarado {
                     if (logIn) {
                         System.out.println("Registro empleados");
 
-                        System.out.println("Ingrese el nombre: ");
+                        System.out.println("-> Ingrese el nombre: ");
                         String nombre = sc.next();
                         System.out.println();
-                        System.out.println("Ingrese su apelldio: ");
+                        System.out.println("-> Ingrese su apelldio: ");
                         String apellido = sc.next();
                         System.out.println();
-                        System.out.println("Ingrese su color favorito: ");
+                        System.out.println("-> Ingrese su color favorito: ");
                         String color = sc.next();
                         System.out.println();
-                        System.out.println("Ingrese su edad: ");
+                        System.out.println("-> Ingrese su edad: ");
                         int edad = sc.nextInt();
                         System.out.println();
-                        System.out.println("Ingerese su altura: ");
+                        System.out.println("-> Ingerese su altura: ");
                         double altura = sc.nextDouble();
                         System.out.println();
-                        System.out.println("Ingrese el peso: ");
+                        System.out.println("-> Ingrese el peso: ");
                         double peso = sc.nextDouble();
                         System.out.println();
-                        System.out.println("Ingrese titulo: ");
+                        System.out.println("-> Ingrese titulo: ");
                         sc.nextLine();
                         String titulo = sc.nextLine();
                         System.out.println();
-                        System.out.println("Ingrese su genero: ");
+                        System.out.println("-> Ingrese su genero: ");
                         String genero = sc.next();
                         System.out.println();
 
@@ -79,12 +79,12 @@ public class Lab2_DanielAlvarado {
                         System.out.println("2) gerente");
                         System.out.println("3) aseador");
                         System.out.println("4) seguridad");
-                        System.out.println("Ingrese la opcion: ");
+                        System.out.println("-> Ingrese la opcion: ");
                         int opcion2 = sc.nextInt();
                         System.out.println();
 
                         while (opcion2 < 0 || opcion2 > 4) {
-                            System.out.println("Ingrese una opcion valida: ");
+                            System.out.println("-> Ingrese una opcion valida: ");
                             opcion2 = sc.nextInt();
                             System.out.println();
                         }
@@ -162,11 +162,11 @@ public class Lab2_DanielAlvarado {
                             Empleado c = lista.get(posicion);
                             
                             System.out.println("Desea eliminar a :"+c
-                            + " 1 = si 2 = no");
+                            + "\n 1 = si 2 = no");
                             int eleccion = sc.nextInt();
                             
                             while (eleccion > 2 || eleccion < 0){
-                                System.out.println("Ingrese posicion correcta: ");
+                                System.out.println("-> Ingrese posicion correcta: ");
                                 eleccion = sc.nextInt();
                                 System.out.println();
                             }
@@ -241,6 +241,7 @@ public class Lab2_DanielAlvarado {
                             else if(contador2 == 0){
                                 System.out.println("No hay empleados con mas "
                                         + "cargo de cajero");
+                                System.out.println();
                             }
                             else{
                                 System.out.println("Lista de empleados");
@@ -248,12 +249,12 @@ public class Lab2_DanielAlvarado {
                                     System.out.println(lista.indexOf(e) + "  " + e);
                                 }
                                 
-                                System.out.println("Ingrese el indice del "
+                                System.out.println("-> Ingrese el indice del "
                                         + "cajero que desea ascender: ");
                                 int number = sc.nextInt();
                                 
                                 while(number < 0 || number > lista.size()-1){
-                                    System.out.println("Ingrese posicion correcta: ");
+                                    System.out.println("-> Ingrese posicion correcta: ");
                                     number = sc.nextInt();
                                     System.out.println();
                                 }
@@ -268,12 +269,12 @@ public class Lab2_DanielAlvarado {
                                     else{
                                         System.out.println("El empleado no "
                                                 + "tiene posicion de cajero");
-                                        System.out.println("Ingrese otra posicion: ");
+                                        System.out.println("-> Ingrese otra posicion: ");
                                         number = sc.nextInt();
                                     }
                                 }
                                 
-                                System.out.println("Desea ascender a gerente a \n"
+                                System.out.println("-> Desea ascender a gerente a \n"
                                         +lista.get(number)+" ? \n 1 = si 2 = no");
                                 int confirmacion = sc.nextInt();
                                 
@@ -359,18 +360,18 @@ public class Lab2_DanielAlvarado {
                                 System.out.println(lista.indexOf(e) + "  " + e);
                             }
                             
-                            System.out.println("Ingrese el indice del "
+                            System.out.println("-> Ingrese el indice del "
                                     + " empleado a modificar: ");
                             int indice = sc.nextInt();
                             System.out.println();
                             
                             while(indice < 0 || indice > lista.size()-1){
-                                System.out.println("Ingrese posicion correcta: ");
+                                System.out.println("-> Ingrese posicion correcta: ");
                                 indice = sc.nextInt();
                                 System.out.println();
                             }
                             
-                            System.out.println("Ingrese opcion de"
+                            System.out.println("-> Ingrese opcion de"
                                     + " atributo a modificar: ");
                             System.out.println("1) Nombre");
                             System.out.println("2) Apellido");
@@ -383,7 +384,7 @@ public class Lab2_DanielAlvarado {
                             System.out.println();
                             
                             while(i < 1 || i > 7){
-                                System.out.println("Ingrese numero correcto");
+                                System.out.println("-> Ingrese numero correcto");
                                 i = sc.nextInt();
                                 System.out.println();
                             }
@@ -391,7 +392,7 @@ public class Lab2_DanielAlvarado {
                             switch(i){
                                 
                                 case 1:
-                                    System.out.println("Ingrese el nuevo nombre: ");
+                                    System.out.println("-> Ingrese el nuevo nombre: ");
                                     String name = sc.next();
                                     lista.get(indice).setNombre(name);
                                     System.out.println("Se modifico correctamente");
@@ -399,14 +400,14 @@ public class Lab2_DanielAlvarado {
                                     break;
                                     
                                 case 2:
-                                    System.out.println("Ingrese el nuevo apellido: ");
+                                    System.out.println("-> Ingrese el nuevo apellido: ");
                                     String apellido = sc.next();
                                     lista.get(indice).setApellido(apellido);
                                     System.out.println("Se modifico correctamente");
                                     break;
                                     
                                 case 3:
-                                    System.out.println("Ingrese el nuevo color: ");
+                                    System.out.println("-> Ingrese el nuevo color: ");
                                     String color = sc.next();
                                     lista.get(indice).setcFavorito(color);
                                     System.out.println("Se modifico correctamente");
@@ -414,7 +415,7 @@ public class Lab2_DanielAlvarado {
                                     break;
                                     
                                 case 4:
-                                    System.out.println("Ingrese la nueva edad: ");
+                                    System.out.println("-> Ingrese la nueva edad: ");
                                     int edad = sc.nextInt();
                                     lista.get(indice).setEdad(edad);
                                     System.out.println("Se modifico correctamente");
@@ -422,7 +423,7 @@ public class Lab2_DanielAlvarado {
                                     break;
                                     
                                 case 5:
-                                    System.out.println("Ingrese nueva altura: ");
+                                    System.out.println("-> Ingrese nueva altura: ");
                                     double altura = sc.nextDouble();
                                     lista.get(indice).setAltura(altura);
                                     System.out.println("Se modifico correctamente");
@@ -430,7 +431,7 @@ public class Lab2_DanielAlvarado {
                                     break;
                                     
                                 case 6:
-                                    System.out.println("Ingrese nuevo peso: ");
+                                    System.out.println("-> Ingrese nuevo peso: ");
                                     double peso = sc.nextDouble();
                                     lista.get(indice).setPeso(peso);
                                     System.out.println("Se modifico correctamente");
@@ -438,7 +439,7 @@ public class Lab2_DanielAlvarado {
                                     break;
                                     
                                 case 7:
-                                    System.out.println("Ingrese nuevo titulo: ");
+                                    System.out.println("-> Ingrese nuevo titulo: ");
                                     sc.nextLine();
                                     String titulo = sc.nextLine();
                                     lista.get(indice).setTitulo(titulo);
