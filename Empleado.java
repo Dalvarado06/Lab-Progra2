@@ -9,7 +9,7 @@ package lab2_danielalvarado;
  *
  * @author dalva
  */
-public class Empleado {
+public class Empleado { 
     
     private String nombre;
     private String apellido;
